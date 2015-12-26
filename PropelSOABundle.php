@@ -1,10 +1,9 @@
 <?php
-
-namespace SOA\SOABundle;
+namespace ThirdEngine\PropelSOABundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class SOASOABundle extends Bundle
+class PropelSOABundle extends Bundle
 {
     /**
      * this will allow the reverse command to tell which tables belong to this bundle

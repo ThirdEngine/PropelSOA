@@ -1,18 +1,15 @@
-test:
-    path: /test
-    defaults: { _controller: SOASOABundle:Service:test }
-SOASOABundle_setdefaultcriteriaendpoint:
+PropelSOABundle_setdefaultcriteriaendpoint:
     path: /defaultCriteria/set/{fieldName}/{value}
-    defaults: { _controller: SOASOABundle:DefaultCriteria:setDefaultCriteria }
-SOASOABundle_getdefaultcriteriaendpoint:
+    defaults: { _controller: PropelSOABundle:DefaultCriteria:setDefaultCriteria }
+PropelSOABundle_getdefaultcriteriaendpoint:
     path: /defaultCriteria/get/{fieldName}
-    defaults: { _controller: SOASOABundle:DefaultCriteria:getDefaultCriteria }
-SOASOABundle_saveendpoint:
+    defaults: { _controller: PropelSOABundle:DefaultCriteria:getDefaultCriteria }
+PropelSOABundle_saveendpoint:
     path:  /save/{namespace}/{bundle}/{entity}
-    defaults: { _controller: SOASOABundle:Service:save }
-SOASOABundle_queryendpoint:
+    defaults: { _controller: PropelSOABundle:Service:save }
+PropelSOABundle_queryendpoint:
     path:  /service/{namespace}/{bundle}/{entity}
-    defaults: { _controller: SOASOABundle:Service:index }
-SOASOABundle_callendpoint:
+    defaults: { _controller: PropelSOABundle:Service:index }
+PropelSOABundle_callendpoint:
     path:  /call/{namespace}/{bundle}/{entity}/{recordId}/{method}
-    defaults: { _controller: SOASOABundle:Service:call }
+    defaults: { _controller: PropelSOABundle:Service:call }

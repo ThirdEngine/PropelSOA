@@ -5,7 +5,7 @@
  *
  * @copyright 2014 Latent Codex / Third Engine Software
  */
-namespace SOA\SOABundle\Utility;
+namespace ThirdEngine\PropelSOABundle\Utility;
 
 use Exception;
 use ReflectionMethod;

@@ -1,7 +1,7 @@
 <?php
-namespace SOA\SOABundle\Tests\Utility;
+namespace ThirdEngine\PropelSOABundle\Tests\Utility;
 
-use SOA\SOABundle\Utility\SimplexmlUtility;
+use ThirdEngine\PropelSOABundle\Utility\SimplexmlUtility;
 
 use SimpleXMLElement;
 use DOMElement;

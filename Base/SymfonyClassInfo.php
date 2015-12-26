@@ -3,7 +3,7 @@
  * This class allows us to define the complete location and type of a class and pass 
  * all of the information to instantiate that class inside of one object.
  */
-namespace SOA\SOABundle\Base;
+namespace ThirdEngine\PropelSOABundleBundle\Base;
 
 use Exception;
 

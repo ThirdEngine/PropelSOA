@@ -1,6 +1,6 @@
 <?php
 
-namespace SOA\SOABundle\Controller;
+namespace ThirdEngine\PropelSOABundleBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -14,6 +14,6 @@ class ConfigurationController extends Controller
     public function indexAction()
     {
         $viewData = array();
-        return $this->render('SOASOABundle:Configuration:index.js.twig', $viewData);
+        return $this->render('PropelSOABundle:Configuration:index.js.twig', $viewData);
     }
 }

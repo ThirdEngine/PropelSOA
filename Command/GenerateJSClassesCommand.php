@@ -1,12 +1,12 @@
 <?php
-namespace SOA\SOABundle\Command;
+namespace ThirdEngine\PropelSOABundleBundle\Command;
 
 use ThirdEngine\Factory\Factory;
-use SOA\SOABundle\Base\SymfonyClassInfo;
-use SOA\SOABundle\Utility\CommandUtility;
-use SOA\SOABundle\Interfaces\ClientExtendable;
-use SOA\SOABundle\Controller\ModelBasedServiceController;
-use SOA\SOABundle\Interfaces\Collectionable;
+use ThirdEngine\PropelSOABundleBundle\Base\SymfonyClassInfo;
+use ThirdEngine\PropelSOABundleBundle\Utility\CommandUtility;
+use ThirdEngine\PropelSOABundleBundle\Interfaces\ClientExtendable;
+use ThirdEngine\PropelSOABundleBundle\Controller\ModelBasedServiceController;
+use ThirdEngine\PropelSOABundleBundle\Interfaces\Collectionable;
 
 use ReflectionClass;
 use Exception;

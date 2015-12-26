@@ -1,7 +1,7 @@
 <?php
-namespace SOA\SOABundle\Tests\Utility;
+namespace ThirdEngine\PropelSOABundle\Tests\Utility;
 
-use SOA\SOABundle\Utility\DocBlockUtility;
+use ThirdEngine\PropelSOABundle\Utility\DocBlockUtility;
 
 use Symfony\Bundle\FrameworkBundle\Tests;
 

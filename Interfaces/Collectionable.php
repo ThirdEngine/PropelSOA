@@ -4,7 +4,7 @@
  * generator should build a collection object for the particular controller.
  */
 
-namespace SOA\SOABundle\Interfaces;
+namespace ThirdEngine\PropelSOABundleBundle\Interfaces;
 
 
 interface Collectionable

@@ -1,7 +1,7 @@
 <?php
-namespace SOA\SOABundle\Tests\Base;
+namespace ThirdEngine\PropelSOABundle\Tests\Base;
 
-use SOA\SOABundle\Base\SymfonyClassInfo;
+use ThirdEngine\PropelSOABundle\Base\SymfonyClassInfo;
 
 use Exception;
 use Symfony\Bundle\FrameworkBundle\Tests;

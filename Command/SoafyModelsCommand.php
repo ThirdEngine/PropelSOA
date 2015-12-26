@@ -1,9 +1,9 @@
 <?php
 
-namespace SOA\SOABundle\Command;
+namespace ThirdEngine\PropelSOABundleBundle\Command;
 
 use ThirdEngine\Factory\Factory;
-use SOA\SOABundle\Utility\CommandUtility;
+use ThirdEngine\PropelSOABundleBundle\Utility\CommandUtility;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputArgument;

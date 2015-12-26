@@ -2,7 +2,7 @@
 /**
  * This class will provide some utility methods that wrap standard simplexml functions.
  */
-namespace SOA\SOABundle\Utility;
+namespace ThirdEngine\PropelSOABundle\Utility;
 
 use SimpleXMLElement;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace SOA\SOABundle\DependencyInjection;
+namespace ThirdEngine\PropelSOABundleBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;

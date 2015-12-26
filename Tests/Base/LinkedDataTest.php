@@ -1,11 +1,11 @@
 <?php
-namespace SOA\SOABundle\Tests\Base;
+namespace ThirdEngine\PropelSOABundle\Tests\Base;
 
 use ThirdEngine\Factory\Factory;
-use SOA\SOABundle\Base\SymfonyClassInfo;
-use SOA\SOABundle\Model\PropelSOAModel;
-use SOA\SOABundle\Base\LinkedData;
-use SOA\SOABundle\Model\PropelSOAPeer;
+use ThirdEngine\PropelSOABundle\Base\SymfonyClassInfo;
+use ThirdEngine\PropelSOABundle\Model\PropelSOAModel;
+use ThirdEngine\PropelSOABundle\Base\LinkedData;
+use ThirdEngine\PropelSOABundle\Model\PropelSOAPeer;
 
 use Symfony\Bundle\FrameworkBundle\Tests;
 

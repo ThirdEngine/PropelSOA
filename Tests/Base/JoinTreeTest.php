@@ -1,13 +1,13 @@
 <?php
-namespace SOA\SOABundle\Tests\Base;
+namespace ThirdEngine\PropelSOABundle\Tests\Base;
 
 use ThirdEngine\Factory\Factory;
-use SOA\SOABundle\Base\JoinTree;
-use SOA\SOABundle\Base\Join;
-use SOA\SOABundle\Base\LinkedData;
-use SOA\SOABundle\Tests\TestUtility;
-use SOA\SOABundle\Base\SymfonyClassInfo;
-use SOA\SOABundle\Model\PropelSOAModel;
+use ThirdEngine\PropelSOABundle\Base\JoinTree;
+use ThirdEngine\PropelSOABundle\Base\Join;
+use ThirdEngine\PropelSOABundle\Base\LinkedData;
+use ThirdEngine\PropelSOABundle\Tests\TestUtility;
+use ThirdEngine\PropelSOABundle\Base\SymfonyClassInfo;
+use ThirdEngine\PropelSOABundle\Model\PropelSOAModel;
 
 use ArrayObject;
 use BasePeer;

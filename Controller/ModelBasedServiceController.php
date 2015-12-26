@@ -1,9 +1,11 @@
 <?php
 
-namespace SOA\SOABundle\Controller;
+namespace ThirdEngine\PropelSOABundleBundle\Controller;
 
-use SOA\SOABundle\Model;
-use SOA\SOABundle\Http\PropelSOASuccessResponse;
+use ThirdEngine\PropelSOABundleBundle\Model;
+use ThirdEngine\PropelSOABundleBundle\Http\PropelSOASuccessResponse;
+use ThirdEngine\PropelSOABundleBundle\Interfaces\Collectionable;
+use ThirdEngine\PropelSOABundleBundle\Base\JoinTree;
 
 use stdClass;
 use DateTime;
@@ -13,7 +15,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\Session;
 
 
-abstract class ModelBasedServiceController extends ServiceController implements \SOA\SOABundle\Interfaces\Collectionable
+abstract class ModelBasedServiceController extends ServiceController implements Collectionable
 {
   /**
    * This stores the class info for the attached model classes.
@@ -47,7 +49,7 @@ abstract class ModelBasedServiceController extends ServiceController implements 
     // modify the query based on the posted data
 
     $queryDefinition = $this->getDataFromRequest($request);
-    $this->joinTree = new \SOA\SOABundle\Base\JoinTree();
+    $this->joinTree = new JoinTree();
 
     if ($queryDefinition)
     {

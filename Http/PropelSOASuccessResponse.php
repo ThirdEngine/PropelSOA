@@ -3,7 +3,7 @@
  * This class serves represents a successful response from a service controller.
  */
 
-namespace SOA\SOABundle\Http;
+namespace ThirdEngine\PropelSOABundleBundle\Http;
 
 use Symfony\Component\HttpFoundation\Response;
 

@@ -1,7 +1,7 @@
 <?php
-namespace SOA\SOABundle\Tests\Utility;
+namespace ThirdEngine\PropelSOABundle\Tests\Utility;
 
-use SOA\SOABundle\Utility\ReflectionUtility;
+use ThirdEngine\PropelSOABundle\Utility\ReflectionUtility;
 
 use Symfony\Bundle\FrameworkBundle\Tests;
 

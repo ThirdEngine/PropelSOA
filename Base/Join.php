@@ -2,9 +2,9 @@
 /**
  * This class defines a join as used by the SOA bundle.
  */
-namespace SOA\SOABundle\Base;
+namespace ThirdEngine\PropelSOABundleBundle\Base;
 
-use SOA\SOABundle\Model\PropelSOAModel;
+use ThirdEngine\PropelSOABundleBundle\Model\PropelSOAModel;
 use ThirdEngine\Factory\Factory;
 
 use BasePeer;

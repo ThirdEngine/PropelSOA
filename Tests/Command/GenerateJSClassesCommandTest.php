@@ -1,15 +1,15 @@
 <?php
-namespace SOA\SOABundle\Tests\Command;
+namespace ThirdEngine\PropelSOABundle\Tests\Command;
 
-use SOA\SOABundle\Base\SymfonyClassInfo;
-use SOA\SOABundle\Command\GenerateJSClassesCommand;
-use SOA\SOABundle\Tests\CommandMock;
+use ThirdEngine\PropelSOABundle\Base\SymfonyClassInfo;
+use ThirdEngine\PropelSOABundle\Command\GenerateJSClassesCommand;
+use ThirdEngine\PropelSOABundle\Tests\CommandMock;
 use ThirdEngine\Factory\Factory;
-use SOA\SOABundle\Utility\CommandUtility;
-use SOA\SOABundle\Tests\TestUtility;
-use SOA\SOABundle\Controller\ModelBasedServiceController;
-use SOA\SOABundle\Interfaces\Collectionable;
-use SOA\SOABundle\Interfaces\ClientExtendable;
+use ThirdEngine\PropelSOABundle\Utility\CommandUtility;
+use ThirdEngine\PropelSOABundle\Tests\TestUtility;
+use ThirdEngine\PropelSOABundle\Controller\ModelBasedServiceController;
+use ThirdEngine\PropelSOABundle\Interfaces\Collectionable;
+use ThirdEngine\PropelSOABundle\Interfaces\ClientExtendable;
 
 use stdClass;
 use ReflectionClass;

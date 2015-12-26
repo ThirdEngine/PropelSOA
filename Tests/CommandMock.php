@@ -5,7 +5,7 @@
  *
  * @copyright 2015 Latent Codex / Third Engine Software
  */
-namespace SOA\SOABundle\Tests;
+namespace ThirdEngine\PropelSOABundle\Tests;
 
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;

@@ -1,5 +1,5 @@
 parameters:
-#    soasoa.example.class: SOA\SOABundle\Example
+#    soasoa.example.class: ThirdEngine\PropelSOABundle\Example
 
 services:
 #    soasoa.example:

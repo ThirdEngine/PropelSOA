@@ -1,22 +1,18 @@
 <?php
+namespace ThirdEngine\PropelSOABundleBundle\Controller;
 
-namespace SOA\SOABundle\Controller;
-
-use \Engine\EngineBundle\Base\EngineCore;
-use \SOA\SOABundle\Model;
+use ThirdEngine\PropelSOABundleBundle\Model;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use \BasePeer;
+use BasePeer;
 
 
 
 class ServiceController extends Controller
 {
-  use EngineCore;
-
   /**
    * This action is the base DELETE action.
    */

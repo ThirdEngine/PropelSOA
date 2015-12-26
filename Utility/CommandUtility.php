@@ -5,7 +5,7 @@
  *
  * @copyright 2015 Latent Codex / Third Engine Software
  */
-namespace SOA\SOABundle\Utility;
+namespace ThirdEngine\PropelSOABundle\Utility;
 
 class CommandUtility
 {

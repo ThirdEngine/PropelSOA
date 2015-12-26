@@ -1,12 +1,13 @@
 <?php
+namespace ThirdEngine\PropelSOABundleBundle\Controller;
 
-namespace SOA\SOABundle\Controller;
+use ThirdEngine\PropelSOABundleBundle\Utility\ReflectionUtility;
+use ThirdEngine\PropelSOABundleBundle\Utility\DocBlockUtility;
+use ThirdEngine\PropelSOABundleBundle\Base\SymfonyClassInfo;
 
+use BasePeer;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Session\Session;
-use \BasePeer;
-use \SOA\SOABundle\Utility\ReflectionUtility;
-use \SOA\SOABundle\Utility\DocBlockUtility;
 
 
 class ObjectGeneratorController extends Controller
@@ -63,7 +64,7 @@ class ObjectGeneratorController extends Controller
       'route'     => $this->getResourceRoute(),
     );
 
-    return $this->render('SOASOABundle:ObjectGenerator:getQuery.js.twig', $viewData);
+    return $this->render('PropelSOABundle:ObjectGenerator:getQuery.js.twig', $viewData);
   }
 
   /**
@@ -86,7 +87,7 @@ class ObjectGeneratorController extends Controller
       'route'     => $this->getResourceRoute(),
     );
 
-    return $this->render('SOASOABundle:ObjectGenerator:getCollection.js.twig', $viewData);
+    return $this->render('PropelSOABundle:ObjectGenerator:getCollection.js.twig', $viewData);
   }
 
   /**
@@ -132,7 +133,7 @@ class ObjectGeneratorController extends Controller
       'customCommitActionPropertyMap' => $this->getCustomCommitActionPropertyMap($namespace, $bundle, $entity),
     );
 
-    return $this->render('SOASOABundle:ObjectGenerator:getObject.js.twig', $viewData);
+    return $this->render('PropelSOABundle:ObjectGenerator:getObject.js.twig', $viewData);
   }
 
   /**
@@ -351,7 +352,7 @@ class ObjectGeneratorController extends Controller
    */
   public function setupClassInfo($namespace, $bundle, $entity)
   {
-    $this->controllerClassInfo = new \SOA\SOABundle\Base\SymfonyClassInfo();
+    $this->controllerClassInfo = new SymfonyClassInfo();
 
     $this->controllerClassInfo->namespace = $namespace;
     $this->controllerClassInfo->bundle    = $bundle;

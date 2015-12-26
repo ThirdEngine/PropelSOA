@@ -3,7 +3,7 @@
 * This class defines a base class for model peer objects. This will allow setup of
 * extra information that can be queried for models.
 */
-namespace SOA\SOABundle\Model;
+namespace ThirdEngine\PropelSOABundleBundle\Model;
 
 use PropelCollection;
 use Traversable;

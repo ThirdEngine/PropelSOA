@@ -2,7 +2,7 @@
 /**
  * This is not a unit test, but a bag of helper methods for writing tests.
  */
-namespace SOA\SOABundle\Tests;
+namespace ThirdEngine\PropelSOABundle\Tests;
 
 use ReflectionProperty;
 use ReflectionMethod;

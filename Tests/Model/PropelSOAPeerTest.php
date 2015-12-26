@@ -1,7 +1,7 @@
 <?php
-namespace SOA\SOABundle\Tests\Model;
+namespace ThirdEngine\PropelSOABundle\Tests\Model;
 
-use SOA\SOABundle\Model\PropelSOAPeer;
+use ThirdEngine\PropelSOABundle\Model\PropelSOAPeer;
 
 use PropelCollection;
 use Symfony\Bundle\FrameworkBundle\Tests;

@@ -1,9 +1,9 @@
 <?php
-namespace SOA\SOABundle\Tests\Http;
+namespace ThirdEngine\PropelSOABundle\Tests\Http;
 
-use SOA\SOABundle\Http\PropelSOAErrorResponse;
-use SOA\SOABundle\Tests\TestUtility;
-use SOA\SOABundle\Http\PropelSOAResponse;
+use ThirdEngine\PropelSOABundle\Http\PropelSOAErrorResponse;
+use ThirdEngine\PropelSOABundle\Tests\TestUtility;
+use ThirdEngine\PropelSOABundle\Http\PropelSOAResponse;
 
 use Exception;
 use Symfony\Bundle\FrameworkBundle\Tests;

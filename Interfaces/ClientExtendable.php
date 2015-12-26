@@ -4,7 +4,7 @@
  * generator should build a final version of an object or an intermediate version that should be extended.
  */
 
-namespace SOA\SOABundle\Interfaces;
+namespace ThirdEngine\PropelSOABundleBundle\Interfaces;
 
 
 interface ClientExtendable

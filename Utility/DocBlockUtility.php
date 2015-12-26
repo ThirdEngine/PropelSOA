@@ -4,7 +4,7 @@
  *
  * @copyright 2014 Latent Codex / Third Engine Software
  */
-namespace SOA\SOABundle\Utility;
+namespace ThirdEngine\PropelSOABundle\Utility;
 
 use Doctrine\Common\Annotations\AnnotationRegistry;
 use Doctrine\Common\Annotations\AnnotationReader;
