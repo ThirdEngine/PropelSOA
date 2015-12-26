@@ -1,0 +1,32 @@
+{
+  "name": "third-engine/propelsoa",
+  "type": "symfony-bundle",
+  "description": "Bridge Between Propel and AngularJS",
+  "keywords": ["propel", "orm", "angularjs", "symfony", "persistence"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Tony Vance",
+      "email": "tony.vance@latentcodex.com"
+    },
+    {
+      "name": "Robert Flach",
+      "email": "robert.flach@latentcodex.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.0",
+    "phpunit/phpunit": "4.3.*",
+    "symfony/symfony": "2.7.*",
+    "symfony/console": "^2.7",
+    "propel/propel1": "1.6.x",
+    "propel/propel-bundle": "1.4.5",
+    "twig/extensions": "1.0.*",
+    "third-engine/factory": "1.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "ThirdEngine\\PropelSOA\\": "src"
+    }
+  }
+}
