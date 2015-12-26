@@ -44,7 +44,7 @@ class GenerateJSClassesCommand extends ContainerAwareCommand
     $baseUrl = $input->getArgument('url');
     $directoryList = [];
 
-    $listDirectoryCommand = 'find ./src -type d |grep -v "SOA/SOABundle" |grep "Controller$"';
+    $listDirectoryCommand = 'find ./src -type d |grep "Controller$"';
     $listControllerCommand = 'find %s -maxdepth 1 -type f |grep "Controller.php$"';
 
     $this->commandUtility = Factory::createNewObject(CommandUtility::class);

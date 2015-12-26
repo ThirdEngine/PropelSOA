@@ -1,15 +1,12 @@
-PropelSOABundle_setdefaultcriteriaendpoint:
-    path: /defaultCriteria/set/{fieldName}/{value}
-    defaults: { _controller: PropelSOABundle:DefaultCriteria:setDefaultCriteria }
-PropelSOABundle_getdefaultcriteriaendpoint:
-    path: /defaultCriteria/get/{fieldName}
-    defaults: { _controller: PropelSOABundle:DefaultCriteria:getDefaultCriteria }
-PropelSOABundle_saveendpoint:
-    path:  /save/{namespace}/{bundle}/{entity}
-    defaults: { _controller: PropelSOABundle:Service:save }
-PropelSOABundle_queryendpoint:
-    path:  /service/{namespace}/{bundle}/{entity}
-    defaults: { _controller: PropelSOABundle:Service:index }
-PropelSOABundle_callendpoint:
-    path:  /call/{namespace}/{bundle}/{entity}/{recordId}/{method}
-    defaults: { _controller: PropelSOABundle:Service:call }
+propelsoa_generateobject_route:
+    path:  /propelsoa/generate/object/{namespace}/{bundle}/{entity}
+    defaults: { _controller: PropelSOABundle:ObjectGenerator:getObject }
+propelsoa_generatepartialobject_route:
+    path:  /propelsoa/generate/partialobject/{namespace}/{bundle}/{entity}
+    defaults: { _controller: PropelSOABundle:ObjectGenerator:getPartialObject }
+propelsoa_generatequery_route:
+    path:  /propelsoa/generate/query/{namespace}/{bundle}/{entity}
+    defaults: { _controller: PropelSOABundle:ObjectGenerator:getQuery }
+propelsoa_generatecollection_route:
+    path:  /propelsoa/generate/collection/{namespace}/{bundle}/{entity}
+    defaults: { _controller: PropelSOABundle:ObjectGenerator:getCollection }
