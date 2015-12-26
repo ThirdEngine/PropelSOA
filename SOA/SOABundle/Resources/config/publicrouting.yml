@@ -1,0 +1,12 @@
+propelsoa_generateobject_route:
+    path:  /generate/object/{namespace}/{bundle}/{entity}
+    defaults: { _controller: SOASOABundle:ObjectGenerator:getObject }
+propelsoa_generatepartialobject_route:
+    path:  /generate/partialobject/{namespace}/{bundle}/{entity}
+    defaults: { _controller: SOASOABundle:ObjectGenerator:getPartialObject }
+propelsoa_generatequery_route:
+    path:  /generate/query/{namespace}/{bundle}/{entity}
+    defaults: { _controller: SOASOABundle:ObjectGenerator:getQuery }
+propelsoa_generatecollection_route:
+    path:  /generate/collection/{namespace}/{bundle}/{entity}
+    defaults: { _controller: SOASOABundle:ObjectGenerator:getCollection }

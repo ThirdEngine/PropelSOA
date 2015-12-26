@@ -1,0 +1,17 @@
+function propelSOALoadQuery_{{ namespace }}_{{ bundle }}_{{ entity }}()
+{
+    {{ generatedClassName }} = PropelSOAQuery.extend({
+        
+        init: function()
+        {
+            this._super();
+
+            this.namespace = "{{ namespace }}";
+            this.bundle    = "{{ bundle }}";
+            this.entity    = "{{ entity }}";
+
+            this.resourceRoute = "{{ route|raw }}";
+        }
+
+    });
+}

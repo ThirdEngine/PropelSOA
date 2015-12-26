@@ -1,0 +1,77 @@
+function propelSOALoad{{ objectSuffix }}_{{ namespace }}_{{ bundle }}_{{ entity }}()
+{
+  {{ generatedClassName }} = PropelSOAObject.extend({
+
+    init: function()
+    {
+      this._super();
+
+      this.myvalue = "{{ defineSaveMethod }}";
+
+      this.namespace = "{{ namespace }}";
+      this.bundle    = "{{ bundle }}";
+      this.entity    = "{{ entity }}";
+
+      this.standardResourceRoute = "{{ route|raw }}";
+
+      this.resourceRoutes = [];
+{% for actionMethodName, resourceRoute in customCommitActionRouteMap %}
+      this.resourceRoutes["{{ actionMethodName }}"] = "{{ resourceRoute|raw }}";
+{% endfor %}
+
+      this.fieldList = [];
+      this.model     = {};
+
+      this.linkedDataFieldNames = [];
+      this.linkedDataModel      = {};
+
+{% for fieldName in fieldNames %}
+      this.fieldList.push("{{ fieldName }}");
+      this.model["{{fieldName}}"] = null;
+{% endfor %}
+
+{% for fieldName in linkedDataFieldNames %}
+      this.linkedDataFieldNames.push("{{ fieldName }}");
+      this.linkedDataModel["{{fieldName}}"] = '';
+{% endfor %}
+    }{% if defineSaveMethod %},
+
+    save: function($scope, scopeVariable, config)
+    {
+      return this.callApi(this.getResourceRoute(), this.buildSaveData(), $scope, scopeVariable, config);
+    },
+
+    buildSaveData: function()
+    {
+      var saveFields = [];
+{% for fieldName in saveFieldNames %}
+      saveFields.push("{{ fieldName }}");
+{% endfor %}
+
+      return this.generateGenericObject(saveFields);
+    }{% endif %}{% for customCommitAction in customCommitActions %},
+
+    {{ customCommitAction.actionMethodName }}: function($scope, scopeVariable, config)
+    {
+      return this.callApi(
+        this.getResourceRoute('{{ customCommitAction.actionMethodName }}'),
+        this.{{ customCommitAction.buildMethodName }}(),
+        $scope,
+        scopeVariable,
+        config
+      );
+    },
+
+    {{ customCommitAction.buildMethodName }}: function()
+    {
+      var actionFields = [];
+ {% for fieldName in attribute(customCommitActionPropertyMap, customCommitAction.actionMethodName) %}
+      actionFields.push("{{ fieldName }}");
+ {% endfor %}
+
+      return this.generateGenericObject(actionFields);
+    }
+
+{% endfor %}
+  });
+}

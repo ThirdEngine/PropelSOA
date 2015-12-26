@@ -1,0 +1,7 @@
+parameters:
+#    soasoa.example.class: SOA\SOABundle\Example
+
+services:
+#    soasoa.example:
+#        class: %soasoa.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

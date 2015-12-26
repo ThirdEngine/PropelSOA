@@ -1,0 +1,18 @@
+test:
+    path: /test
+    defaults: { _controller: SOASOABundle:Service:test }
+SOASOABundle_setdefaultcriteriaendpoint:
+    path: /defaultCriteria/set/{fieldName}/{value}
+    defaults: { _controller: SOASOABundle:DefaultCriteria:setDefaultCriteria }
+SOASOABundle_getdefaultcriteriaendpoint:
+    path: /defaultCriteria/get/{fieldName}
+    defaults: { _controller: SOASOABundle:DefaultCriteria:getDefaultCriteria }
+SOASOABundle_saveendpoint:
+    path:  /save/{namespace}/{bundle}/{entity}
+    defaults: { _controller: SOASOABundle:Service:save }
+SOASOABundle_queryendpoint:
+    path:  /service/{namespace}/{bundle}/{entity}
+    defaults: { _controller: SOASOABundle:Service:index }
+SOASOABundle_callendpoint:
+    path:  /call/{namespace}/{bundle}/{entity}/{recordId}/{method}
+    defaults: { _controller: SOASOABundle:Service:call }

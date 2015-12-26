@@ -1,0 +1,20 @@
+function propelSOALoadCollection_{{ namespace }}_{{ bundle }}_{{ entity }}()
+{
+    {{ generatedClassName }} = PropelSOACollection.extend({
+    
+        init: function()
+        {
+            this._super();
+
+            this.namespace = "{{ namespace }}";
+            this.bundle    = "{{ bundle }}";
+            this.entity    = "{{ entity }}";
+
+            this.resourceRoute = "{{ route|raw }}";
+            this.PropelSOA = null;
+
+            this.collection = [];
+        }
+
+    });    
+}
