@@ -1,6 +1,6 @@
 <?php
 
-namespace ThirdEngine\PropelSOABundleBundle\Controller;
+namespace ThirdEngine\PropelSOABundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 

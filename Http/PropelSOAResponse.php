@@ -3,7 +3,7 @@
  * This class serves as a base class for the standard PropelSOA responses.
  */
 
-namespace ThirdEngine\PropelSOABundleBundle\Http;
+namespace ThirdEngine\PropelSOABundle\Http;
 
 use Symfony\Component\HttpFoundation\Response;
 

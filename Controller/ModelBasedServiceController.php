@@ -1,11 +1,11 @@
 <?php
 
-namespace ThirdEngine\PropelSOABundleBundle\Controller;
+namespace ThirdEngine\PropelSOABundle\Controller;
 
-use ThirdEngine\PropelSOABundleBundle\Model;
-use ThirdEngine\PropelSOABundleBundle\Http\PropelSOASuccessResponse;
-use ThirdEngine\PropelSOABundleBundle\Interfaces\Collectionable;
-use ThirdEngine\PropelSOABundleBundle\Base\JoinTree;
+use ThirdEngine\PropelSOABundle\Model;
+use ThirdEngine\PropelSOABundle\Http\PropelSOASuccessResponse;
+use ThirdEngine\PropelSOABundle\Interfaces\Collectionable;
+use ThirdEngine\PropelSOABundle\Base\JoinTree;
 
 use stdClass;
 use DateTime;

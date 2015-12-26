@@ -2,7 +2,7 @@
 /**
  * This class serves represents an error response from a service controller.
  */
-namespace ThirdEngine\PropelSOABundleBundle\Http;
+namespace ThirdEngine\PropelSOABundle\Http;
 
 use Exception;
 use Symfony\Component\HttpFoundation\Response;

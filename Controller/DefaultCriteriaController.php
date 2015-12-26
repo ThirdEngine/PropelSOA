@@ -4,7 +4,7 @@
  * used on any API queries (just db queries, not other api calls).
  */
 
-namespace ThirdEngine\PropelSOABundleBundle\Controller;
+namespace ThirdEngine\PropelSOABundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Session\Session;

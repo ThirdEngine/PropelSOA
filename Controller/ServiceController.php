@@ -1,7 +1,7 @@
 <?php
-namespace ThirdEngine\PropelSOABundleBundle\Controller;
+namespace ThirdEngine\PropelSOABundle\Controller;
 
-use ThirdEngine\PropelSOABundleBundle\Model;
+use ThirdEngine\PropelSOABundle\Model;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Session\Session;

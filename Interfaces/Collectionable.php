@@ -4,7 +4,7 @@
  * generator should build a collection object for the particular controller.
  */
 
-namespace ThirdEngine\PropelSOABundleBundle\Interfaces;
+namespace ThirdEngine\PropelSOABundle\Interfaces;
 
 
 interface Collectionable

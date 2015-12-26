@@ -2,9 +2,9 @@
 /**
 * This class defines a join tree as used by the SOA bundle.
 */
-namespace ThirdEngine\PropelSOABundleBundle\Base;
+namespace ThirdEngine\PropelSOABundle\Base;
 
-use ThirdEngine\PropelSOABundleBundle\Model\PropelSOAModel;
+use ThirdEngine\PropelSOABundle\Model\PropelSOAModel;
 
 use Traversable;
 use BasePeer;

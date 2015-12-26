@@ -1,12 +1,12 @@
 <?php
-namespace ThirdEngine\PropelSOABundleBundle\Command;
+namespace ThirdEngine\PropelSOABundle\Command;
 
 use ThirdEngine\Factory\Factory;
-use ThirdEngine\PropelSOABundleBundle\Base\SymfonyClassInfo;
-use ThirdEngine\PropelSOABundleBundle\Utility\CommandUtility;
-use ThirdEngine\PropelSOABundleBundle\Interfaces\ClientExtendable;
-use ThirdEngine\PropelSOABundleBundle\Controller\ModelBasedServiceController;
-use ThirdEngine\PropelSOABundleBundle\Interfaces\Collectionable;
+use ThirdEngine\PropelSOABundle\Base\SymfonyClassInfo;
+use ThirdEngine\PropelSOABundle\Utility\CommandUtility;
+use ThirdEngine\PropelSOABundle\Interfaces\ClientExtendable;
+use ThirdEngine\PropelSOABundle\Controller\ModelBasedServiceController;
+use ThirdEngine\PropelSOABundle\Interfaces\Collectionable;
 
 use ReflectionClass;
 use Exception;

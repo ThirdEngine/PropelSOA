@@ -1,9 +1,9 @@
 <?php
-namespace ThirdEngine\PropelSOABundleBundle\Controller;
+namespace ThirdEngine\PropelSOABundle\Controller;
 
-use ThirdEngine\PropelSOABundleBundle\Utility\ReflectionUtility;
-use ThirdEngine\PropelSOABundleBundle\Utility\DocBlockUtility;
-use ThirdEngine\PropelSOABundleBundle\Base\SymfonyClassInfo;
+use ThirdEngine\PropelSOABundle\Utility\ReflectionUtility;
+use ThirdEngine\PropelSOABundle\Utility\DocBlockUtility;
+use ThirdEngine\PropelSOABundle\Base\SymfonyClassInfo;
 
 use BasePeer;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;

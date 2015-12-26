@@ -1,6 +1,6 @@
 <?php
 
-namespace ThirdEngine\PropelSOABundleBundle\DependencyInjection;
+namespace ThirdEngine\PropelSOABundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;

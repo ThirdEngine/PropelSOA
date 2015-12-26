@@ -3,9 +3,9 @@
  * This class defines a data relation. This could either be the path to linked
  * data or to a real table join.
  */
-namespace ThirdEngine\PropelSOABundleBundle\Base;
+namespace ThirdEngine\PropelSOABundle\Base;
 
-use ThirdEngine\PropelSOABundleBundle\Model\PropelSOAModel;
+use ThirdEngine\PropelSOABundle\Model\PropelSOAModel;
 
 
 class DataRelation
