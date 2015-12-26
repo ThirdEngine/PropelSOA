@@ -14,6 +14,11 @@
       "email": "robert.flach@latentcodex.com"
     }
   ],
+  "config": {
+    "github-oauth": {
+      "github.com": "3d9b33f82636944b2cf643e5bf4011c2a89af6b4"
+    }
+  },
   "require": {
     "php": ">=5.5.0",
     "phpunit/phpunit": "4.3.*",
