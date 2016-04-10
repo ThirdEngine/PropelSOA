@@ -151,7 +151,7 @@ class GenerateJSClassesCommand extends ContainerAwareCommand
 
     foreach ($routesToGenerate as $routeKey)
     {
-      $url = $baseUrl . '/app_dev.php' . $router->generate($routeKey, $params);
+      $url = $baseUrl . $router->generate($routeKey, $params);
       $this->code .= $this->commandUtility->fileGetContents($url);
     }
   }

@@ -206,14 +206,14 @@ abstract class ModelBasedServiceController extends ServiceController implements 
     // save the record and return the record's primary key
     if (method_exists($this, 'beforeSave'))
     {
-      $model = $this->beforeSave($model);
+      $this->beforeSave($model);
     }
 
     $model->save();
 
     if (method_exists($this, 'afterSave'))
     {
-      $model = $this->afterSave($model);
+      $this->afterSave($model);
     }
 
     list($peerClass, $queryClass, $modelClass) = $this->getClassPaths();
