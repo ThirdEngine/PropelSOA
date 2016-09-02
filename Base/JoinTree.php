@@ -6,6 +6,7 @@ namespace ThirdEngine\PropelSOABundle\Base;
 
 use ThirdEngine\PropelSOABundle\Model\PropelSOAModel;
 
+use DateTime;
 use Traversable;
 use BasePeer;
 use PropelParser;
@@ -189,6 +190,14 @@ class JoinTree
   {
     $data = $model->toArray(BasePeer::TYPE_PHPNAME, false);
 
+    foreach ($data as $key => $value)
+    {
+      if ($value instanceof DateTime)
+      {
+        $data[$key] = $value->format('c');
+      }
+    }
+
     foreach ($this->dataRelationList as $dataRelation)
     {
       $dataRelation->addJoinedDataToResultArray($model, $data);
@@ -196,6 +205,10 @@ class JoinTree
 
     return $data;
   }
+
+  /**
+   * This method will handle any date time objects
+   */
 
   /**
    * This method will wrap the fromArray() method on the PropelParser.

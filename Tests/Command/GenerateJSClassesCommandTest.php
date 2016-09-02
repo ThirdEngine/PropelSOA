@@ -158,9 +158,9 @@ class GenerateJSClassesCommandTest extends Tests\TestCase
     $commandUtilityMock->expects($this->exactly(3))
       ->method('fileGetContents')
       ->will($this->returnValueMap([
-        ['http://site.com/app_dev.php/query', 'query'],
-        ['http://site.com/app_dev.php/collection', 'collection'],
-        ['http://site.com/app_dev.php/partial', 'partial'],
+        ['http://site.com/query', 'query'],
+        ['http://site.com/collection', 'collection'],
+        ['http://site.com/partial', 'partial'],
       ]));
 
     $commandUtilityMock->expects($this->once())

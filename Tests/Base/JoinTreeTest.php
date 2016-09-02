@@ -9,6 +9,7 @@ use ThirdEngine\PropelSOABundle\Tests\TestUtility;
 use ThirdEngine\PropelSOABundle\Base\SymfonyClassInfo;
 use ThirdEngine\PropelSOABundle\Model\PropelSOAModel;
 
+use DateTime;
 use ArrayObject;
 use BasePeer;
 use ModelCriteria;
@@ -160,5 +161,36 @@ class JoinTreeTest extends Tests\TestCase
       ->with($this->equalTo([['id' => $modelData['id'], 'value' => 'hello']]));
 
     $joinTree->outputAsJSON($modelCollection);
+  }
+
+  public function testOutputAsJSONConvertsDateTimesToStandardValues()
+  {
+    $dateValue = '2016-09-02';
+
+    $modelData = [
+      'id' => 23490,
+      'dateCreated' => new DateTime($dateValue),
+    ];
+
+    $modelMock = $this->getMock(PropelSOAModel::class, ['toArray']);
+    $modelMock->expects($this->once())
+      ->method('toArray')
+      ->with(BasePeer::TYPE_PHPNAME, false)
+      ->willReturn($modelData);
+
+    $testUtility = new TestUtility();
+    $modelCollection = $testUtility->convertToCollection([$modelMock]);
+
+    $joinTree = new JoinTree();
+    $json = $joinTree->outputAsJSON($modelCollection);
+
+    $objects = json_decode($json);
+    $object = $objects[0];
+
+    $this->assertFalse(is_array($object->dateCreated));
+    $this->assertFalse(is_object($object->dateCreated));
+
+    $renderedDateTime = new DateTime($object->dateCreated);
+    $this->assertEquals($dateValue, $renderedDateTime->format('Y-m-d'));
   }
 }
