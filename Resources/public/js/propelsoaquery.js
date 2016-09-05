@@ -178,6 +178,40 @@ var PropelSOAQuery = Class.extend({
   },
 
   /**
+   * This method will run a query against the API, but we will return simple object structures
+   * instead of the more intricate PropelSOA objects. This loses you the ability
+   * to automatically just save your object if you edit it.
+   *
+   * @param $scope
+   * @param property
+   * @param config
+   */
+  query: function ($scope, property, config)
+  {
+    config = typeof(config) == 'undefined' ? {} : config;
+
+    var dataToSend = this.buildQueryData();
+    var deferred = this.propelSOA.$q.defer();
+
+    var localConfig = $.extend({}, config);
+    localConfig.url = this.getResourceRoute();
+    localConfig.method = 'GET';
+    localConfig.params = dataToSend;
+
+    this.propelSOA.$http(localConfig).then(
+      function(json, status, headers, config)
+      {
+        $scope[property] = json.Data.results;
+        deferred.resolve();
+      },
+      function (reason)
+      {
+        deferred.reject();
+      }
+    );
+  },
+
+  /**
    * This method actually runs the query through the server-side endpoint and populates the
    * specified angular model.
    *

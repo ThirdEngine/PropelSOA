@@ -108,7 +108,7 @@ var PropelSOAObject = Class.extend({
   },
 
   /**
-   * This method will generate the data objec tused for the standard save method.
+   * This method will generate the data object used for the standard save method.
    *
    * @return object
    */
