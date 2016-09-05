@@ -201,7 +201,7 @@ var PropelSOAQuery = Class.extend({
     this.propelSOA.$http(localConfig).then(
       function(json, status, headers, config)
       {
-        $scope[property] = json.Data.results;
+        $scope[property] = json.data.Data.results;
         deferred.resolve();
       },
       function (reason)
