@@ -209,6 +209,8 @@ var PropelSOAQuery = Class.extend({
         deferred.reject();
       }
     );
+
+    return deferred.promise;
   },
 
   /**
