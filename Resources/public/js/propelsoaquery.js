@@ -214,6 +214,35 @@ var PropelSOAQuery = Class.extend({
   },
 
   /**
+   * This method runs a query using the standard query() method and then takes the first result.
+   * If no results were returned, then we will return null.
+   *
+   * @param $scope
+   * @param property
+   * @param config
+   */
+  queryOne: function($scope, property, config)
+  {
+    var deferred = this.propelSOA.$q.defer();
+    this.oneResult = true;
+
+    var limitedScope = {
+      'results': null
+    };
+
+    this.query(limitedScope, 'results', config).then(function()
+    {
+      $scope[property] = limitedScope.results.length > 0 ? limitedScope.results[0] : null;
+      deferred.resolve();
+    }, function()
+    {
+      deferred.reject();
+    });
+
+    return deferred.promise;
+  },
+
+  /**
    * This method actually runs the query through the server-side endpoint and populates the
    * specified angular model.
    *
