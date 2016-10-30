@@ -5,7 +5,8 @@
  */
 namespace ThirdEngine\PropelSOABundle\Model;
 
-use Engine\EngineBundle\Utility\DateTimeUtility;
+use ThirdEngine\Factory\Factory;
+use ThirdEngine\PropelSOABundle\Base\SymfonyClassInfo;
 
 use BasePeer;
 use BaseObject;
@@ -20,6 +21,22 @@ class PropelSOAModel extends BaseObject
    */
   public $linkedData = [];
 
+
+  /**
+   * This method will return this tables TableMap object.
+   *
+   * @return TableMap
+   */
+  public function getTableMap()
+  {
+    $classInfo = Factory::createNewObject(SymfonyClassInfo::class);
+    $classInfo->parseClassPath(get_class($this));
+
+    $queryClass = $classInfo->getClassPath('query');
+    $query = Factory::createNewQueryObject($queryClass);
+
+    return $query->getTableMap();
+  }
 
   /**
    * This method will set a particular piece of linked data on our model.

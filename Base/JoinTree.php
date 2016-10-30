@@ -194,7 +194,8 @@ class JoinTree
     {
       if ($value instanceof DateTime)
       {
-        $data[$key] = $value->format('c');
+        $format = $this->getDateTimeFormat($model, $key);
+        $data[$key] = $value->format($format);
       }
     }
 
@@ -204,6 +205,21 @@ class JoinTree
     }
 
     return $data;
+  }
+
+  /**
+   * This method will return the DateTime format we should use based on the column
+   * type from the database.
+   *
+   * @param PropelSOAModel $model
+   * @param string $columnPhpName
+   *
+   * @return string
+   */
+  protected function getDateTimeFormat(PropelSOAModel $model, $columnPhpName)
+  {
+    $tableMap = $model->getTableMap();
+    return $tableMap->getColumnByPhpName($columnPhpName)->getType() == 'DATE' ? 'Y-m-d' : 'c';
   }
 
   /**

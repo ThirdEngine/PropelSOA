@@ -13,6 +13,8 @@ use DateTime;
 use ArrayObject;
 use BasePeer;
 use ModelCriteria;
+use ColumnMap;
+use TableMap;
 use stdClass;
 use Symfony\Bundle\FrameworkBundle\Tests;
 
@@ -172,11 +174,24 @@ class JoinTreeTest extends Tests\TestCase
       'dateCreated' => new DateTime($dateValue),
     ];
 
-    $modelMock = $this->getMock(PropelSOAModel::class, ['toArray']);
+    $columnMapMock = $this->getMock(ColumnMap::class, ['getType'], [], '', false);
+    $columnMapMock->expects($this->any())
+      ->method('getType')
+      ->willReturn('NOTDATE');
+
+    $tableMapMock = $this->getMock(TableMap::class, ['getColumnByPhpName'], [], '', false);
+    $tableMapMock->expects($this->any())
+      ->method('getColumnByPhpName')
+      ->willReturn($columnMapMock);
+
+    $modelMock = $this->getMock(PropelSOAModel::class, ['toArray', 'getTableMap']);
     $modelMock->expects($this->once())
       ->method('toArray')
       ->with(BasePeer::TYPE_PHPNAME, false)
       ->willReturn($modelData);
+    $modelMock->expects($this->any())
+      ->method('getTableMap')
+      ->willReturn($tableMapMock);
 
     $testUtility = new TestUtility();
     $modelCollection = $testUtility->convertToCollection([$modelMock]);
@@ -192,5 +207,48 @@ class JoinTreeTest extends Tests\TestCase
 
     $renderedDateTime = new DateTime($object->dateCreated);
     $this->assertEquals($dateValue, $renderedDateTime->format('Y-m-d'));
+  }
+
+  public function testOutputAsJSONConvertsDateTimeToOnlyDateStringIfOriginatingColumnIsDateOnly()
+  {
+    $dateValue = '2016-09-02';
+
+    $modelData = [
+      'dateCreated' => new DateTime($dateValue),
+    ];
+
+    $columnMapMock = $this->getMock(ColumnMap::class, ['getType'], [], '', false);
+    $columnMapMock->expects($this->any())
+      ->method('getType')
+      ->willReturn('DATE');
+
+    $tableMapMock = $this->getMock(TableMap::class, ['getColumnByPhpName'], [], '', false);
+    $tableMapMock->expects($this->any())
+      ->method('getColumnByPhpName')
+      ->with('dateCreated')
+      ->willReturn($columnMapMock);
+
+    $modelMock = $this->getMock(PropelSOAModel::class, ['toArray', 'getTableMap']);
+    $modelMock->expects($this->once())
+      ->method('toArray')
+      ->with(BasePeer::TYPE_PHPNAME, false)
+      ->willReturn($modelData);
+    $modelMock->expects($this->any())
+      ->method('getTableMap')
+      ->willReturn($tableMapMock);
+
+    $testUtility = new TestUtility();
+    $modelCollection = $testUtility->convertToCollection([$modelMock]);
+
+    $joinTree = new JoinTree();
+    $json = $joinTree->outputAsJSON($modelCollection);
+
+    $objects = json_decode($json);
+    $object = $objects[0];
+
+    $this->assertFalse(is_array($object->dateCreated));
+    $this->assertFalse(is_object($object->dateCreated));
+
+    $this->assertEquals($dateValue, $object->dateCreated);
   }
 }
