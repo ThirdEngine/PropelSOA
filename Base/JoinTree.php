@@ -219,7 +219,7 @@ class JoinTree
   protected function getDateTimeFormat(PropelSOAModel $model, $columnPhpName)
   {
     $tableMap = $model->getTableMap();
-    return $tableMap->getColumnByPhpName($columnPhpName)->getType() == 'DATE' ? 'Y-m-d' : 'c';
+    return $tableMap->getColumnByPhpName($columnPhpName)->getType() == 'DATE' ? 'Y-m-d 00:00:00+00:00' : 'c';
   }
 
   /**
