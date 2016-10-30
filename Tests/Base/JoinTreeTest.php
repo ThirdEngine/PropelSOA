@@ -249,6 +249,6 @@ class JoinTreeTest extends Tests\TestCase
     $this->assertFalse(is_array($object->dateCreated));
     $this->assertFalse(is_object($object->dateCreated));
 
-    $this->assertEquals($dateValue . '00:00:00+00:00', $object->dateCreated);
+    $this->assertEquals($dateValue, $object->dateCreated);
   }
 }
