@@ -151,13 +151,14 @@ class Join extends DataRelation
   protected function getJoinedDataForPluralRelationship(PropelSOAModel $model)
   {
     $joinedData = [];
+    $modelConverter = new ModelConverter();
 
     $getMethod = 'get' . $this->getPluralRelationName();
     $relatedCollection = $model->$getMethod();
 
     foreach ($relatedCollection as $relatedModel)
     {
-      $relatedModelData = $relatedModel->toArray(BasePeer::TYPE_PHPNAME, false);
+      $relatedModelData = $modelConverter->convertModelToData($relatedModel);
       $this->applyChildJoins($relatedModel, $relatedModelData);
 
       $joinedData[] = $relatedModelData;
@@ -184,9 +185,11 @@ class Join extends DataRelation
     }
 
     $relatedModel = $relatedCollection->getFirst();
-    $joinedData = $relatedModel->toArray(BasePeer::TYPE_PHPNAME, false);
-    $this->applyChildJoins($relatedModel, $joinedData);
 
+    $modelConverter = new ModelConverter();
+    $joinedData = $modelConverter->convertModelToData($relatedModel);
+
+    $this->applyChildJoins($relatedModel, $joinedData);
     return $joinedData;
   }
 
@@ -206,9 +209,10 @@ class Join extends DataRelation
       return null;
     }
 
-    $joinedData = $relatedModel->toArray(BasePeer::TYPE_PHPNAME, false);
-    $this->applyChildJoins($relatedModel, $joinedData);
+    $modelConverter = new ModelConverter();
+    $joinedData = $modelConverter->convertModelToData($relatedModel);
 
+    $this->applyChildJoins($relatedModel, $joinedData);
     return $joinedData;
   }
 

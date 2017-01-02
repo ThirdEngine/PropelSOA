@@ -188,16 +188,8 @@ class JoinTree
    */
   protected function convertModelToArray(PropelSOAModel $model)
   {
-    $data = $model->toArray(BasePeer::TYPE_PHPNAME, false);
-
-    foreach ($data as $key => $value)
-    {
-      if ($value instanceof DateTime)
-      {
-        $format = $this->getDateTimeFormat($model, $key);
-        $data[$key] = $value->format($format);
-      }
-    }
+    $modelConverter = new ModelConverter();
+    $data = $modelConverter->convertModelToData($model);
 
     foreach ($this->dataRelationList as $dataRelation)
     {
@@ -206,25 +198,6 @@ class JoinTree
 
     return $data;
   }
-
-  /**
-   * This method will return the DateTime format we should use based on the column
-   * type from the database.
-   *
-   * @param PropelSOAModel $model
-   * @param string $columnPhpName
-   *
-   * @return string
-   */
-  protected function getDateTimeFormat(PropelSOAModel $model, $columnPhpName)
-  {
-    $tableMap = $model->getTableMap();
-    return $tableMap->getColumnByPhpName($columnPhpName)->getType() == 'DATE' ? 'Y-m-d' : 'c';
-  }
-
-  /**
-   * This method will handle any date time objects
-   */
 
   /**
    * This method will wrap the fromArray() method on the PropelParser.
