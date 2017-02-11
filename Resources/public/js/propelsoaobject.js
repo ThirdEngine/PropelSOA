@@ -223,5 +223,20 @@ var PropelSOAObject = Class.extend({
     }
 
     return this.query.refresh();
+  },
+
+  /**
+   * This will import field values from another object. This is useful for stripping cruft off of a propel soa object to get
+   * ready to save it to the database.
+   */
+  importFields: function (dataObject)
+  {
+    for (var index = 0; index < this.fieldList.length; ++index) {
+      var fieldName = this.fieldList[index];
+
+      if (typeof(dataOjbect[fieldName]) != 'undefined') {
+        this.model[fieldName] = dataObject[fieldName];
+      }
+    }
   }
 });
