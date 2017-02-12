@@ -379,7 +379,7 @@ function launchPropelSOA(propelSOAApp, debugMode, domain, customSOAPath, alterna
           url: env_url + url,
           method: method,
           data: data,
-          ignoreAuthModel: ignoreAuthModule
+          ignoreAuthModule: ignoreAuthModule
         };
 
         return $http(config);
