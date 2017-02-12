@@ -234,7 +234,7 @@ var PropelSOAObject = Class.extend({
     for (var index = 0; index < this.fieldList.length; ++index) {
       var fieldName = this.fieldList[index];
 
-      if (typeof(dataOjbect[fieldName]) != 'undefined') {
+      if (typeof(dataObject[fieldName]) != 'undefined') {
         this.model[fieldName] = dataObject[fieldName];
       }
     }
