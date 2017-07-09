@@ -69,6 +69,26 @@ var PropelSOAQuery = Class.extend({
   },
 
 
+  addAdditionalData: function (additionalJoins, additionalLinkedDatas)
+  {
+    var queryObject = this;
+
+    if (additionalJoins)
+    {
+      additionalJoins.forEach(function (join) {
+        queryObject.addInnerJoin(join);
+      });
+    }
+
+    if (additionalLinkedDatas)
+    {
+      additionalLinkedDatas.forEach(function (linkedData) {
+        queryObject.addLinkedData(linkedData);
+      });
+    }
+  },
+
+
   addEqualFilter: function(fieldName, value)
   {
     filter = new PropelSOAEqualFilter();
