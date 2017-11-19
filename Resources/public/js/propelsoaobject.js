@@ -1,4 +1,3 @@
-
 var PropelSOAObject = Class.extend({
 
   /**
@@ -227,15 +226,23 @@ var PropelSOAObject = Class.extend({
 
   /**
    * This will import field values from another object. This is useful for stripping cruft off of a propel soa object to get
-   * ready to save it to the database.
+   * ready to save it through the API.
    */
   importFields: function (dataObject)
   {
-    for (var index = 0; index < this.fieldList.length; ++index) {
-      var fieldName = this.fieldList[index];
+    var dataObjectProperties = Object.keys(dataObject);
+    var lowercaseDataObjectProperties = dataObjectProperties.map(function (propertyName) {
+      return propertyName.toLowerCase();
+    });
 
-      if (typeof(dataObject[fieldName]) != 'undefined') {
-        this.model[fieldName] = dataObject[fieldName];
+    for (var fieldListIndex = 0; fieldListIndex < this.fieldList.length; ++fieldListIndex) {
+      var fieldName = this.fieldList[fieldListIndex];
+      var lowercaseFieldName = fieldName.toLowerCase();
+
+      var keyIndex = lowercaseDataObjectProperties.indexOf(lowercaseFieldName);
+      if (keyIndex != -1)
+      {
+        this.model[fieldName] = dataObject[dataObjectProperties[keyIndex]];
       }
     }
   }
